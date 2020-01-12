@@ -1,0 +1,9 @@
+sudo: required
+services:
+    - docker
+
+before_install:
+    - docker build -t hhermas/docker-react -f Dockerfile.dev .
+
+script:
+    - docker run hhermas/docker-react npm run test -- --coverage
