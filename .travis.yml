@@ -6,4 +6,4 @@ before_install:
     - docker build -t hhermas/docker-react -f Dockerfile.dev .
 
 script:
-    - docker run hhermas/docker-react npm run test -- --coverage
+    - docker run -e CI=true hhermas/docker-react npm run test -- --coverage
